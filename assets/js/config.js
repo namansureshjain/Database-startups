@@ -40,9 +40,20 @@ window.SITE_CONFIG = {
   youtube:    "",                                   // optional, full URL
 
   /* ---------- 5. Music ----------
-     Drop an mp3 at assets/audio/aarti.mp3 (use audio you have the rights to).
-     If the file is missing, a gentle temple-bell ambience is synthesised
-     in the browser instead, so the button always works. */
+
+     A) The playlist section (Spotify).
+        In Spotify, open your playlist -> ... -> Share -> Copy link to playlist,
+        and paste it below. Anything Spotify gives you works: a full link, a
+        spotify:playlist:... URI, or just the ID. An album or a single song
+        link works too.
+        Leave it "" and the whole playlist section disappears from the page.
+        The playlist must be PUBLIC or visitors will see an empty player. */
+  spotifyPlaylist: "",                              // <-- PASTE YOUR SPOTIFY LINK
+
+  /*   B) The background track behind the little music button.
+        Drop an mp3 at assets/audio/aarti.mp3 (use audio you have the rights to).
+        If the file is missing, a gentle temple-bell ambience is synthesised
+        in the browser instead, so the button always works. */
   musicSrc:    "assets/audio/aarti.mp3",
   musicVolume: 0.55,
 

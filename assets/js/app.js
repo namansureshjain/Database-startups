@@ -12,7 +12,7 @@
     upiId: '', upiPayeeName: '', qrImage: 'assets/qr.svg', qrIsSample: false,
     causeName: '', causeLine: '', phone: '', phoneLabel: '', whatsapp: '', email: '',
     address: '', mapsUrl: '', instagram: '', youtube: '',
-    musicSrc: 'assets/audio/aarti.mp3', musicVolume: .55,
+    spotifyPlaylist: '', musicSrc: 'assets/audio/aarti.mp3', musicVolume: .55,
     showWelcomeGate: true, showPetals: true
   };
   var cfg = Object.assign({}, DEFAULTS, window.SITE_CONFIG || {});
@@ -260,6 +260,9 @@
     }
   })();
 
+  /* the playlist section fills this in so the two players never overlap */
+  var stopSpotify = null;
+
   /* ---------------- music ----------------
      Plays cfg.musicSrc if the file exists. If it doesn't (or the browser
      refuses it), a soft temple-bell + drone ambience is synthesised with
@@ -349,6 +352,7 @@
     }
 
     function start(quiet) {
+      if (stopSpotify) stopSpotify();
       on = true; sync();
       if (useSynth) { startSynth(); if (!quiet) toast('Temple bells on'); return; }
       var a = audioEl();
@@ -377,7 +381,66 @@
     });
 
     sync();
-    return { start: start, stop: stop };
+    return { start: start, stop: stop, isOn: function () { return on; } };
+  })();
+
+  /* ---------------- Spotify playlist ----------------
+     Accepts whatever Spotify's share menu gives you: a full link, a
+     spotify:playlist:... URI, or a bare ID — for a playlist, album,
+     track, artist, show or episode.                                     */
+  (function playlist() {
+    var sec = $('#music'), frame = $('#spotifyFrame');
+    if (!sec || !frame) return;
+
+    function parse(raw) {
+      var v = String(raw || '').trim(), kinds = 'playlist|album|track|artist|show|episode', m;
+      if (!v) return null;
+      if ((m = v.match(new RegExp('^spotify:(' + kinds + '):([A-Za-z0-9]+)')))) return { type: m[1], id: m[2] };
+      if ((m = v.match(new RegExp('open\\.spotify\\.com/(?:intl-[a-z-]+/)?(?:embed/)?(' + kinds + ')/([A-Za-z0-9]+)')))) return { type: m[1], id: m[2] };
+      if (/^[A-Za-z0-9]{16,40}$/.test(v)) return { type: 'playlist', id: v };
+      return null;
+    }
+
+    var hit = parse(cfg.spotifyPlaylist);
+
+    if (!hit) {
+      // Nothing configured. Hide the section and its menu links; on your own
+      // machine, show the one-line setup note instead so it is easy to find.
+      var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || location.protocol === 'file:';
+      $$('.js-music-link').forEach(function (a) { a.remove(); });
+      if (local) {
+        sec.hidden = false;
+        $('.player').hidden = true;
+        $('#playlistSetup').hidden = false;
+      }
+      return;
+    }
+
+    frame.src = 'https://open.spotify.com/embed/' + hit.type + '/' + hit.id + '?utm_source=generator&theme=0';
+    var openLink = $('#spotifyOpen');
+    if (openLink) openLink.href = 'https://open.spotify.com/' + hit.type + '/' + hit.id;
+    sec.hidden = false;
+
+    /* The player lives in a cross-origin iframe, so we can't read its state.
+       What we can tell is when someone clicks into it — that means they are
+       about to press play, so the site's own bells get out of the way. */
+    var engaged = false;
+    window.addEventListener('blur', function () {
+      setTimeout(function () {
+        if (document.activeElement === frame) {
+          engaged = true;
+          if (music.isOn()) { music.stop(); toast('Bells off — enjoy the playlist'); }
+        }
+      }, 0);
+    });
+
+    /* And the other direction: reloading the iframe is the only way to stop
+       playback we don't control. Only do it if the playlist was actually used. */
+    stopSpotify = function () {
+      if (!engaged) return;
+      engaged = false;
+      frame.src = frame.src;
+    };
   })();
 
   /* ---------------- welcome gate ---------------- */

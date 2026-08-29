@@ -62,13 +62,44 @@ in `config.js`.
 
 ### 3. Music
 
-Save your track as `assets/audio/aarti.mp3`. Use audio you have the rights to
-— your own recording, something licensed, or a Creative Commons track. See
-`assets/audio/README.txt`.
+Two separate things, and you can use either or both.
 
-Nothing autoplays. Visitors choose sound on the welcome screen, and can mute
-any time from the button at the bottom-left. That's deliberate: browsers block
-autoplay anyway, and a page that starts shouting is a page people close.
+**The playlist section (Spotify).** This is the easy, legal way to play actual
+Ganpati songs — Spotify handles the licensing, you just link to it.
+
+1. Make a playlist in Spotify and add your aartis, bhajans and dhol tracks.
+2. Set it to **public** — Spotify's own privacy setting. A private playlist
+   shows visitors an empty player.
+3. Open the playlist → **…** → **Share** → **Copy link to playlist**.
+4. Paste it into `spotifyPlaylist` in `config.js`.
+
+Anything Spotify hands you works — a full `https://open.spotify.com/playlist/…`
+link, a `spotify:playlist:…` URI, or the bare ID. An album, a single song or an
+artist link works the same way.
+
+Leave `spotifyPlaylist` empty and the whole section, plus its menu link,
+disappears from the page.
+
+Two things worth knowing before you rely on it:
+
+- **Visitors signed in to Spotify hear the full songs. Everyone else hears
+  30-second previews.** That's Spotify's rule for embeds and there is no way
+  around it. It still works as atmosphere, but don't promise full aartis on a
+  poster.
+- **The embed will not autoplay**, in any browser. A visitor has to press play.
+
+**The background track (the little floating button).** Save an mp3 as
+`assets/audio/aarti.mp3` and the button at the bottom-left plays it on loop.
+Use audio you have the rights to — your own recording, something licensed, or
+a Creative Commons track. See `assets/audio/README.txt`. Without that file the
+button synthesises soft temple bells instead, so it is never dead.
+
+The two never play over each other: starting the Spotify playlist mutes the
+background track, and starting the background track stops the playlist.
+
+Nothing autoplays. Visitors choose sound on the welcome screen and can mute any
+time. That's deliberate — browsers block autoplay anyway, and a page that
+starts shouting is a page people close.
 
 ### 4. Photos
 
@@ -126,6 +157,7 @@ Any plain web host works too: upload the files as-is over FTP.
 - [ ] You scanned the QR with your own phone and the right account name came up
 - [ ] Dates checked against the panchang (2026 defaults: sthapana 14 Sep, visarjan 25 Sep)
 - [ ] Phone number, WhatsApp and the Maps pin all open the right thing
+- [ ] Spotify playlist is set to **public**, and the player loads on the live site
 - [ ] The named cause is one you can actually hand the money to
 - [ ] Checked on a real phone, not just a resized laptop window
 

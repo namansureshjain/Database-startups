@@ -62,6 +62,7 @@
       <a href="#about">About</a>
       <a href="#darshan">Darshan</a>
       <a href="#schedule">Programme</a>
+      <a href="#music" class="js-music-link">Music</a>
       <a href="#donate">Donate</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Visit</a>
@@ -212,6 +213,42 @@
 </section>
 
 <div class="garland" aria-hidden="true"></div>
+
+<!-- ============ PLAYLIST ============ -->
+<!-- Hidden until a Spotify link is set in config.js -->
+<section class="sec sec--night" id="music" hidden>
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker kicker--gold">Sounds of the mandap</p>
+      <h2>The aarti playlist</h2>
+      <p class="sec__sub">The songs we play through the eleven days, in the order we play them. Press play and the mandap comes to you.</p>
+    </div>
+
+    <div class="player reveal">
+      <div class="player__frame">
+        <iframe id="spotifyFrame" title="Ganeshotsav playlist on Spotify" src="" loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+      <aside class="player__side">
+        <h3>Listening notes</h3>
+        <ul class="ticks ticks--tight">
+          <li>Signed in to Spotify in this browser? You get the full songs.</li>
+          <li>Not signed in? Every track plays a 30-second preview instead — still enough to set the mood.</li>
+          <li>Starting the playlist mutes the bells in the corner, so the two never talk over each other.</li>
+        </ul>
+        <a class="btn btn--outline-light" id="spotifyOpen" href="#" target="_blank" rel="noopener">Open in the Spotify app</a>
+      </aside>
+    </div>
+
+    <!-- shown only when you are running the site locally and have not set a link yet -->
+    <div class="player__setup" id="playlistSetup" hidden>
+      <p><b>No playlist yet.</b> In Spotify: open your playlist → <b>…</b> → <b>Share</b> → <b>Copy link to playlist</b>, then paste it into <code>spotifyPlaylist</code> in <code>assets/js/config.js</code>.</p>
+      <p class="player__setup-note">This note only appears while you are running the site on your own machine. On the live site the section simply stays hidden until a link is set.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ============ DONATE / QR ============ -->
 <section class="sec sec--donate" id="donate">
@@ -368,7 +405,7 @@
 
     <nav class="site-foot__nav" aria-label="Footer">
       <a href="#about">About</a><a href="#darshan">Darshan</a><a href="#schedule">Programme</a>
-      <a href="#donate">Donate</a><a href="#gallery">Gallery</a><a href="#contact">Visit</a>
+      <a href="#music" class="js-music-link">Music</a><a href="#donate">Donate</a><a href="#gallery">Gallery</a><a href="#contact">Visit</a>
     </nav>
 
     <div class="site-foot__social" id="social"></div>
