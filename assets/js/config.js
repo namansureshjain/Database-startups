@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   mandalName:      "श्री गणेश उत्सव मंडळ",          // shown in Devanagari in the hero
   mandalNameEn:    "Shree Ganesh Utsav Mandal",     // English name, used in the nav + footer
   tagline:         "Ganeshotsav 2026",
-  cityLine:        "Pune, Maharashtra",             // small line under the hero title
+  cityLine:        "Mumbai, Maharashtra",             // small line under the hero title
 
   /* ---------- 2. Festival dates (YYYY-MM-DD, 24h time) ----------
      Verify these against your local panchang before going live.  */
@@ -29,9 +29,9 @@ window.SITE_CONFIG = {
   causeLine:    "100% of what we collect is passed on — nothing is kept by the mandal.",
 
   /* ---------- 4. Contact ---------- */
-  phone:      "+919999999999",                      // <-- REPLACE (with country code, no spaces)
-  phoneLabel: "+91 99999 99999",
-  whatsapp:   "919999999999",                       // <-- REPLACE (country code, digits only)
+  phone:      "+919324048236",                      // <-- REPLACE (with country code, no spaces)
+  phoneLabel: "+91 93240 48236",
+  whatsapp:   "919324048236",                       // <-- REPLACE (country code, digits only)
   email:      "",                                   // optional — leave "" to hide
   address:    "Mandap ground, MG Road, Pune 411001",
   mapsUrl:    "https://maps.google.com/?q=Pune",    // <-- REPLACE with your pinned location
