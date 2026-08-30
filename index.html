@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shree Ganesh Utsav Mandal · Ganeshotsav 2026</title>
+<meta name="description" content="Ganeshotsav 2026 — darshan and aarti timings, the day-by-day programme, and a UPI QR for donations. Every rupee collected goes to a social cause.">
+<meta name="theme-color" content="#2A0E1E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shree Ganesh Utsav Mandal · Ganeshotsav 2026">
+<meta property="og:description" content="Darshan timings, the full programme, and a UPI QR for donations. All proceeds go to a social cause.">
+<meta property="og:image" content="assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237B1E2B'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23F0B429'%3E%E0%A5%90%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@300;400;600;800&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ WELCOME GATE (lets the visitor opt into sound) ============ -->
+<div class="gate" id="gate" hidden>
+  <div class="gate__inner">
+    <div class="emblem emblem--lg" aria-hidden="true"><span>ॐ</span></div>
+    <p class="gate__mantra" lang="mr">श्री गणेशाय नमः</p>
+    <h1 class="gate__title" id="gateTitle">Shree Ganesh Utsav Mandal</h1>
+    <p class="gate__sub">Ganeshotsav 2026</p>
+    <div class="gate__actions">
+      <button class="btn btn--gold" id="enterSound" type="button">
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Enter with aarti
+      </button>
+      <button class="btn btn--ghost" id="enterSilent" type="button">Enter silently</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head" id="siteHead">
+  <div class="wrap site-head__row">
+    <a class="brand" href="#home">
+      <span class="emblem" aria-hidden="true"><span>ॐ</span></span>
+      <span class="brand__text">
+        <strong data-cfg="mandalNameEn">Shree Ganesh Utsav Mandal</strong>
+        <small data-cfg="tagline">Ganeshotsav 2026</small>
+      </span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#darshan">Darshan</a>
+      <a href="#schedule">Programme</a>
+      <a href="#music" class="js-music-link">Music</a>
+      <a href="#donate">Donate</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+      <a class="nav__cta" href="#donate">Donate via UPI</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+
+  <div class="hero__mandala" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <g fill="none" stroke="currentColor" stroke-linecap="round">
+        <circle cx="200" cy="200" r="196" stroke-width="1" stroke-dasharray="2 10"/>
+        <circle cx="200" cy="200" r="170" stroke-width="1.5" stroke-dasharray="18 12"/>
+        <circle cx="200" cy="200" r="146" stroke-width="1" stroke-dasharray="4 8"/>
+        <circle cx="200" cy="200" r="112" stroke-width="2" stroke-dasharray="30 16"/>
+        <circle cx="200" cy="200" r="86"  stroke-width="1" stroke-dasharray="3 7"/>
+        <circle cx="200" cy="200" r="58"  stroke-width="1.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero__inner">
+    <p class="hero__eyebrow" lang="mr">॥ श्री गणेशाय नमः ॥</p>
+    <h1 class="hero__title" lang="mr" data-cfg="mandalName">श्री गणेश उत्सव मंडळ</h1>
+    <p class="hero__sub"><span data-cfg="mandalNameEn">Shree Ganesh Utsav Mandal</span> · <span data-cfg="cityLine">Pune, Maharashtra</span></p>
+
+    <p class="hero__lede">
+      Eleven days of darshan, aarti and prasad — and one promise:
+      <strong>every rupee collected goes straight to a social cause.</strong>
+    </p>
+
+    <div class="hero__actions">
+      <a class="btn btn--gold btn--lg" href="#donate">
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M3 3h7v7H3V3zm2 2v3h3V5H5zm9-2h7v7h-7V3zm2 2v3h3V5h-3zM3 14h7v7H3v-7zm2 2v3h3v-3H5zm9-2h3v3h-3v-3zm5 0h2v2h-2v-2zm-5 5h3v2h-3v-2zm5 0h2v2h-2v-2z"/></svg>
+        Donate — scan the QR
+      </a>
+      <a class="btn btn--outline btn--lg" href="#darshan">Darshan timings</a>
+    </div>
+
+    <p class="hero__note" id="heroDates">Sthapana · 14 September 2026 &nbsp;—&nbsp; Visarjan · 25 September 2026</p>
+  </div>
+
+  <div class="hero__fade" aria-hidden="true"></div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="countdown" aria-label="Countdown to sthapana">
+  <div class="wrap">
+    <p class="countdown__label" id="cdLabel">Sthapana begins in</p>
+    <ol class="countdown__grid" id="countdown">
+      <li><b>--</b><span>Days</span></li>
+      <li><b>--</b><span>Hours</span></li>
+      <li><b>--</b><span>Minutes</span></li>
+      <li><b>--</b><span>Seconds</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec sec--cream" id="about">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <p class="kicker">About the mandal</p>
+      <h2>A festival that leaves something behind</h2>
+    </div>
+
+    <div class="split">
+      <div class="split__text reveal">
+        <p class="lead">
+          Every year the lanes fill with dhol, the mandap glows till midnight, and Bappa
+          comes home to all of us. We wanted the celebration to carry more than sound.
+        </p>
+        <p>
+          So the collection box works differently here. Nothing is spent on the mandal itself —
+          decoration, lighting and prasad are covered by the members from their own pockets.
+          What visitors give is counted publicly on the last day and handed over, in full, to
+          <strong data-cfg="causeName">our chosen cause</strong>.
+        </p>
+        <p>
+          Come for the darshan. Stay for the aarti. Give whatever feels right —
+          <span class="hl">even ₹11 adds up when a whole neighbourhood gives it.</span>
+        </p>
+        <a class="link-arrow" href="#donate">See where the money goes <span aria-hidden="true">→</span></a>
+      </div>
+
+      <ul class="stats reveal">
+        <li><b>11</b><span>days of darshan</span></li>
+        <li><b>100%</b><span>of proceeds donated</span></li>
+        <li><b>2×</b><span>aarti every day</span></li>
+        <li><b>0₹</b><span>kept by the mandal</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="garland" aria-hidden="true"></div>
+
+<!-- ============ DARSHAN TIMINGS ============ -->
+<section class="sec sec--deep" id="darshan">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker">Every single day</p>
+      <h2>Darshan &amp; aarti timings</h2>
+      <p class="sec__sub">The mandap stays open right through the day. Aarti is the busiest — reach ten minutes early.</p>
+    </div>
+
+    <ol class="timeline">
+      <li class="reveal"><span class="timeline__time">05:30 <i>am</i></span><div><h3>Kakad Aarti</h3><p>The first aarti of the day, before the lane wakes up. Quiet, and the best darshan you will get.</p></div></li>
+      <li class="reveal"><span class="timeline__time">07:00 <i>am</i></span><div><h3>Darshan opens</h3><p>Open queue, no pass needed. Ramp access on the left side of the mandap.</p></div></li>
+      <li class="reveal"><span class="timeline__time">12:00 <i>pm</i></span><div><h3>Madhyan Aarti &amp; Mahaprasad</h3><p>Prasad is served till it lasts. Volunteers in saffron scarves will point you to the queue.</p></div></li>
+      <li class="reveal"><span class="timeline__time">04:00 <i>pm</i></span><div><h3>Cultural programme</h3><p>Different every evening — see the programme below.</p></div></li>
+      <li class="reveal is-highlight"><span class="timeline__time">07:30 <i>pm</i></span><div><h3>Sandhya Aarti</h3><p><b>The one to come for.</b> Dhol-tasha, full mandap, and the lamps lit together.</p></div></li>
+      <li class="reveal"><span class="timeline__time">10:30 <i>pm</i></span><div><h3>Shej Aarti · mandap closes</h3><p>Last darshan of the night. Weekends run half an hour longer.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section class="sec sec--cream" id="schedule">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker">Day by day</p>
+      <h2>Programme <span data-cfg="festivalYear">2026</span></h2>
+      <p class="sec__sub">Everything is free and open to all. Evening events start at 4:00 pm unless noted.</p>
+    </div>
+
+    <div class="days">
+      <article class="day reveal"><header><span class="day__n">Day 1</span><time>Mon, 14 Sep</time></header><h3>Pratishthapana</h3><p>Idol installation at the sthapana muhurat, followed by the first Maha Aarti.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 2</span><time>Tue, 15 Sep</time></header><h3>Atharvashirsha Pathan</h3><p>Collective recitation. Everyone welcome — copies of the text are handed out.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 3</span><time>Wed, 16 Sep</time></header><h3>Children's day</h3><p>Drawing, fancy dress and shloka contests for the under-14s. Prizes after the evening aarti.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 4</span><time>Thu, 17 Sep</time></header><h3>Bhajan sandhya</h3><p>Local bhajani mandals through the evening.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 5</span><time>Fri, 18 Sep</time></header><h3>Health &amp; blood-donation camp</h3><p>Free check-ups from 9 am. Registration at the volunteer desk.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 6</span><time>Sat, 19 Sep</time></header><h3>Dhol-tasha pathak</h3><p>The loudest night of the week. Come early, the lane fills up fast.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 7</span><time>Sun, 20 Sep</time></header><h3>Mahaprasad</h3><p>Community lunch from noon. Bring the family.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 8</span><time>Mon, 21 Sep</time></header><h3>Cultural night</h3><p>Dance and music by the neighbourhood's own performers.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 9</span><time>Tue, 22 Sep</time></header><h3>Senior citizens' felicitation</h3><p>Honouring the elders who have run this mandal for decades.</p></article>
+      <article class="day reveal"><header><span class="day__n">Day 10</span><time>Wed, 23 Sep</time></header><h3>Satyanarayan Puja</h3><p>Puja in the morning, mahaprasad in the evening.</p></article>
+      <article class="day reveal is-final"><header><span class="day__n">Day 11</span><time>Fri, 25 Sep</time></header><h3>Visarjan · Anant Chaturdashi</h3><p>Miravnuk leaves the mandap at 2 pm. The donation total is announced and handed over before we leave.</p></article>
+    </div>
+    <p class="fineprint reveal">Dates follow the panchang for <span data-cfg="festivalYear">2026</span> — please confirm with the mandal before travelling.</p>
+  </div>
+</section>
+
+<div class="garland" aria-hidden="true"></div>
+
+<!-- ============ PLAYLIST ============ -->
+<!-- Hidden until a Spotify link is set in config.js -->
+<section class="sec sec--night" id="music" hidden>
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker kicker--gold">Sounds of the mandap</p>
+      <h2>The aarti playlist</h2>
+      <p class="sec__sub">The songs we play through the eleven days, in the order we play them. Press play and the mandap comes to you.</p>
+    </div>
+
+    <div class="player reveal">
+      <div class="player__frame">
+        <iframe id="spotifyFrame" title="Ganeshotsav playlist on Spotify" src="" loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+      <aside class="player__side">
+        <h3>Listening notes</h3>
+        <ul class="ticks ticks--tight">
+          <li>Signed in to Spotify in this browser? You get the full songs.</li>
+          <li>Not signed in? Every track plays a 30-second preview instead — still enough to set the mood.</li>
+          <li>Starting the playlist mutes the bells in the corner, so the two never talk over each other.</li>
+        </ul>
+        <a class="btn btn--outline-light" id="spotifyOpen" href="#" target="_blank" rel="noopener">Open in the Spotify app</a>
+      </aside>
+    </div>
+
+    <!-- shown only when you are running the site locally and have not set a link yet -->
+    <div class="player__setup" id="playlistSetup" hidden>
+      <p><b>No playlist yet.</b> In Spotify: open your playlist → <b>…</b> → <b>Share</b> → <b>Copy link to playlist</b>, then paste it into <code>spotifyPlaylist</code> in <code>assets/js/config.js</code>.</p>
+      <p class="player__setup-note">This note only appears while you are running the site on your own machine. On the live site the section simply stays hidden until a link is set.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONATE / QR ============ -->
+<section class="sec sec--donate" id="donate">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker kicker--gold">Deni · Donation</p>
+      <h2>Scan, give, and it all moves on</h2>
+      <p class="sec__sub">
+        Every rupee received on this QR goes to <strong data-cfg="causeName">our chosen cause</strong>.
+        The total is counted in public on visarjan day and the transfer receipt is shared here afterwards.
+      </p>
+    </div>
+
+    <div class="donate">
+      <!-- QR card -->
+      <div class="qr-card reveal">
+        <div class="qr-card__top">
+          <span class="qr-card__upi">UPI</span>
+          <span class="qr-card__badge" id="qrSample" hidden>Sample QR — replace before going live</span>
+        </div>
+
+        <figure class="qr-card__frame">
+          <img id="qrImg" src="assets/qr.svg" alt="UPI QR code for donating to the mandal" width="320" height="320">
+          <figcaption>Scan with any UPI app — GPay, PhonePe, Paytm, BHIM</figcaption>
+        </figure>
+
+        <dl class="qr-card__meta">
+          <dt>Paying to</dt><dd data-cfg="upiPayeeName">Shree Ganesh Utsav Mandal</dd>
+          <dt>UPI ID</dt>
+          <dd class="qr-card__upiid">
+            <code id="upiId">yourmandal@upi</code>
+            <button class="copy" id="copyUpi" type="button" aria-label="Copy UPI ID">
+              <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M9 9h9v11H9V9zm2 2v7h5v-7h-5z"/><path d="M6 4h9v2H8v10H6V4z"/></svg>
+              <span>Copy</span>
+            </button>
+          </dd>
+        </dl>
+
+        <a class="btn btn--gold btn--block" id="upiLink" href="#">Open my UPI app</a>
+        <p class="qr-card__hint">On a phone this opens GPay / PhonePe directly. On a laptop, scan the QR above.</p>
+
+        <ul class="chips" id="amountChips">
+          <li><button type="button" data-amt="101">₹101</button></li>
+          <li><button type="button" data-amt="251">₹251</button></li>
+          <li><button type="button" data-amt="501">₹501</button></li>
+          <li><button type="button" data-amt="1100">₹1,100</button></li>
+          <li><button type="button" data-amt="" class="is-active">Any amount</button></li>
+        </ul>
+      </div>
+
+      <!-- Where it goes -->
+      <div class="cause reveal">
+        <div class="diya" aria-hidden="true">
+          <svg viewBox="0 0 80 90">
+            <ellipse cx="40" cy="72" rx="30" ry="10" fill="#7B1E2B"/>
+            <path d="M10 66c6 8 54 8 60 0-4 12-56 12-60 0z" fill="#B03A2E"/>
+            <path class="flame" d="M40 22c8 10 12 15 12 22a12 12 0 0 1-24 0c0-7 4-12 12-22z" fill="#F0B429"/>
+            <path class="flame flame--in" d="M40 36c4 6 6 8 6 12a6 6 0 0 1-12 0c0-4 2-6 6-12z" fill="#FFF3D0"/>
+          </svg>
+        </div>
+
+        <h3>Where your money goes</h3>
+        <p class="cause__name" data-cfg="causeName">Anna Daan &amp; school-kit drive</p>
+        <p class="cause__line" data-cfg="causeLine">100% of what we collect is passed on — nothing is kept by the mandal.</p>
+
+        <ul class="ticks">
+          <li>Decoration, lighting, sound and prasad are paid for by the members themselves.</li>
+          <li>The donation box and this UPI ID feed a single account, used for nothing else.</li>
+          <li>The running total is written on the board at the mandap every evening.</li>
+          <li>The final amount is announced on visarjan day, in front of everyone present.</li>
+          <li>The transfer receipt is posted on this page within a week of the festival.</li>
+        </ul>
+
+        <div class="cause__cta">
+          <a class="btn btn--outline-light" id="waAsk" href="#" target="_blank" rel="noopener">Ask us anything on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="sec sec--cream" id="gallery">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker">Gallery</p>
+      <h2>From the mandap</h2>
+      <p class="sec__sub">Tag us in your photos and we will add them here.</p>
+    </div>
+
+    <!-- Swap any tile's content for  <img src="assets/img/your-photo.jpg" alt="..."> -->
+    <div class="gallery">
+      <figure class="gtile gtile--tall reveal" data-emoji="🪔"><figcaption>Sandhya aarti</figcaption></figure>
+      <figure class="gtile reveal" data-emoji="🌼"><figcaption>Morning decoration</figcaption></figure>
+      <figure class="gtile reveal" data-emoji="🥁"><figcaption>Dhol-tasha</figcaption></figure>
+      <figure class="gtile gtile--wide reveal" data-emoji="🙏"><figcaption>Darshan queue</figcaption></figure>
+      <figure class="gtile reveal" data-emoji="🍬"><figcaption>Mahaprasad</figcaption></figure>
+      <figure class="gtile reveal" data-emoji="🎪"><figcaption>Visarjan miravnuk</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / CONTACT ============ -->
+<section class="sec sec--deep" id="contact">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <p class="kicker">Visit us</p>
+      <h2>Come for darshan</h2>
+    </div>
+
+    <div class="contact">
+      <a class="ccard reveal" id="mapCard" href="#" target="_blank" rel="noopener">
+        <span class="ccard__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        </span>
+        <b>Mandap address</b>
+        <span data-cfg="address">Mandap ground, MG Road, Pune 411001</span>
+        <em>Open in Maps →</em>
+      </a>
+
+      <a class="ccard reveal" id="callCard" href="#">
+        <span class="ccard__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .55 3.5 1 1 0 0 1-.25 1l-2.2 2.3z"/></svg>
+        </span>
+        <b>Call the mandal</b>
+        <span data-cfg="phoneLabel">+91 99999 99999</span>
+        <em>Tap to call →</em>
+      </a>
+
+      <a class="ccard reveal" id="waCard" href="#" target="_blank" rel="noopener">
+        <span class="ccard__ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.2-.7a11.4 11.4 0 0 1-4.7-4.2c-.4-.6-1-1.6-1-3s.7-2 1-2.3a1 1 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4 0 .5l-.4.5-.3.3c-.1.2-.3.3-.1.6a8.4 8.4 0 0 0 4 3.4c.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3s0 .8-.1 1z"/></svg>
+        </span>
+        <b>WhatsApp</b>
+        <span>Questions, volunteering, sponsorship</span>
+        <em>Message us →</em>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="wrap site-foot__row">
+    <div class="site-foot__brand">
+      <span class="emblem" aria-hidden="true"><span>ॐ</span></span>
+      <div>
+        <strong data-cfg="mandalNameEn">Shree Ganesh Utsav Mandal</strong>
+        <small data-cfg="cityLine">Pune, Maharashtra</small>
+      </div>
+    </div>
+
+    <nav class="site-foot__nav" aria-label="Footer">
+      <a href="#about">About</a><a href="#darshan">Darshan</a><a href="#schedule">Programme</a>
+      <a href="#music" class="js-music-link">Music</a><a href="#donate">Donate</a><a href="#gallery">Gallery</a><a href="#contact">Visit</a>
+    </nav>
+
+    <div class="site-foot__social" id="social"></div>
+  </div>
+  <p class="site-foot__morya" lang="mr">॥ गणपती बाप्पा मोरया, पुढच्या वर्षी लवकर या ॥</p>
+  <p class="site-foot__legal">
+    © <span id="year">2026</span> <span data-cfg="mandalNameEn">Shree Ganesh Utsav Mandal</span>.
+    Donations are voluntary and are not eligible for tax deduction unless a receipt says otherwise.
+  </p>
+</footer>
+
+<!-- ============ FLOATING CONTROLS ============ -->
+<button class="fab fab--music" id="musicBtn" type="button" aria-pressed="false" aria-label="Play festival music">
+  <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <svg class="fab__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9.5l4 5m0-5l-4 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+
+<a class="fab fab--give" href="#donate" id="giveFab">
+  <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M3 3h7v7H3V3zm2 2v3h3V5H5zm9-2h7v7h-7V3zm2 2v3h3V5h-3zM3 14h7v7H3v-7zm2 2v3h3v-3H5zm9-2h3v3h-3v-3zm5 0h2v2h-2v-2zm-5 5h3v2h-3v-2zm5 0h2v2h-2v-2z"/></svg>
+  <span>Donate</span>
+</a>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
