@@ -48,7 +48,7 @@ window.SITE_CONFIG = {
         link works too.
         Leave it "" and the whole playlist section disappears from the page.
         The playlist must be PUBLIC or visitors will see an empty player. */
-  spotifyPlaylist: "https://open.spotify.com/playlist/37i9dQZF1DWWewwIBnx9QZ",                              // <-- PASTE YOUR SPOTIFY LINK
+  spotifyPlaylist: "https://open.spotify.com/playlist/37i9dQZF1DWWewwIBnx9QZ?si=CnagyxfeTly9-6fOgU2EhQ",                              // <-- PASTE YOUR SPOTIFY LINK
 
   /*   B) The background track behind the little music button.
         Drop an mp3 at assets/audio/aarti.mp3 (use audio you have the rights to).
