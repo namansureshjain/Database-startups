@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Trip companion">
+  <rect width="64" height="64" rx="14" fill="#0f3d4e"/>
+  <circle cx="32" cy="22" r="7.5" fill="#e0a94a"/>
+  <path d="M32 31 L45 50 H19 Z" fill="#fbf8f3"/>
+  <path d="M32 37 L40.5 50 H23.5 Z" fill="#2d6f85"/>
+  <rect x="14" y="50" width="36" height="4" rx="2" fill="#fbf8f3"/>
+  <path d="M10 58 q6-3 12 0 t12 0 t12 0" stroke="#7fadba" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+</svg>
