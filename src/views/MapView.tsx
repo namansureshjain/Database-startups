@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { ExternalLink, Info, MapPin, Navigation } from 'lucide-react';
@@ -58,12 +58,25 @@ function pinIcon(g: PinGroup, allDone: boolean) {
   });
 }
 
+const BOUNDS_OPTS: L.FitBoundsOptions = { padding: [48, 48], maxZoom: 12 };
+
+function bounds(pins: Pin[]) {
+  return L.latLngBounds(pins.map((p) => [p.lat, p.lon] as [number, number]));
+}
+
+/** Re-frames the map when the day filter changes. The first render is already
+ *  framed by MapContainer's `bounds`, so skip it — otherwise Leaflet requests a
+ *  screenful of tiles and immediately cancels them. */
 function FitBounds({ pins }: { pins: Pin[] }) {
   const map = useMap();
-  useMemo(() => {
+  const first = useRef(true);
+  useEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
     if (pins.length === 0) return;
-    const b = L.latLngBounds(pins.map((p) => [p.lat, p.lon] as [number, number]));
-    map.fitBounds(b, { padding: [48, 48], maxZoom: 12 });
+    map.fitBounds(bounds(pins), BOUNDS_OPTS);
   }, [map, pins]);
   return null;
 }
@@ -87,6 +100,9 @@ export function MapView({ store, go }: { store: TripStore; go: (r: RouteId, dayN
   );
 
   const groups = useMemo(() => groupPins(pins), [pins]);
+
+  // Frame the whole trip on first paint so no tiles are fetched then discarded.
+  const initialBounds = useMemo(() => bounds(allPins), [allPins]);
 
   /** Itinerary stops the map cannot pin, because no reliable coordinate exists. */
   const unpinned = useMemo(
@@ -124,8 +140,8 @@ export function MapView({ store, go }: { store: TripStore; go: (r: RouteId, dayN
       <div className="card mt-4 overflow-hidden">
         <div className="relative z-0 h-[58svh] min-h-[380px] w-full isolate">
           <MapContainer
-            center={[12.3, 79.95]}
-            zoom={9}
+            bounds={initialBounds}
+            boundsOptions={BOUNDS_OPTS}
             scrollWheelZoom={false}
             className="size-full"
             attributionControl

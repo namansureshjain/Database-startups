@@ -62,7 +62,7 @@ const day1: Activity[] = [
     title: 'Mahabalipuram Shore Temple',
     kind: 'sightseeing',
     description:
-      'Visit the 8th century Mahabalipuram Shore Temple — one of the finest examples of Dravidian style of architecture.',
+      'Visit the 8th century Mahabalipuram Seashore Temple — one of the finest examples of Dravidian style of architecture.',
     scheduledTime: null,
     timeHint: null,
     duration: null,
@@ -176,7 +176,9 @@ const day2: Activity[] = [
       mapsQuery: 'Panchamukha Anjaneyar Temple Puducherry',
     }),
     notes: [],
-    image: 'panchavati',
+    // No freely-licensed photograph of this temple exists on Wikimedia Commons,
+    // so the card renders without one rather than showing an unrelated image.
+    image: null,
   },
   {
     id: 'd2-matrimandir',
